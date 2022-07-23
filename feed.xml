@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>alperk</title>
+    <link href="https://alperkantarci.github.io/feed.xml" rel="self" />
+    <link href="https://alperkantarci.github.io" />
+    <updated>2022-07-23T18:59:53+02:00</updated>
+    <author>
+        <name>Alper Kantarci</name>
+    </author>
+    <id>https://alperkantarci.github.io</id>
+
+    <entry>
+        <title>Test Post</title>
+        <author>
+            <name>Alper Kantarci</name>
+        </author>
+        <link href="https://alperkantarci.github.io/test-post.html"/>
+        <id>https://alperkantarci.github.io/test-post.html</id>
+
+        <updated>2022-07-23T18:59:53+02:00</updated>
+            <summary>
+                <![CDATA[
+                    Hello from test post!
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Hello from test post!</p>
+            ]]>
+        </content>
+    </entry>
+</feed>

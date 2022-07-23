@@ -1,0 +1,27 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "alperk",
+    "description": "",
+    "home_page_url": "https://alperkantarci.github.io",
+    "feed_url": "https://alperkantarci.github.io/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "Alper Kantarci"
+    },
+    "items": [
+        {
+            "id": "https://alperkantarci.github.io/test-post.html",
+            "url": "https://alperkantarci.github.io/test-post.html",
+            "title": "Test Post",
+            "summary": "Hello from test post!",
+            "content_html": "<p>Hello from test post!</p>",
+            "author": {
+                "name": "Alper Kantarci"
+            },
+            "tags": [
+            ],
+            "date_published": "2022-07-23T18:59:53+02:00",
+            "date_modified": "2022-07-23T18:59:53+02:00"
+        }
+    ]
+}

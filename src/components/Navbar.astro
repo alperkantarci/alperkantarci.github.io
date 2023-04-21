@@ -1,0 +1,80 @@
+---
+import NavbarItem from './NavbarItem.astro';
+import { Icon } from 'astro-icon';
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+---
+
+<!-- dekstop navbar -->
+<div class="fixed hidden lg:w-72 border-r-[1px] border-zinc-900 text-zinc-300 h-screen lg:flex flex-col py-20 px-10">
+  <div class="flex flex-col items-center mb-24">
+    <a href="/"><img src="profile-photo.jpg" class="rounded-full w-28 mb-4" /></a>
+    <p class="mb-1 text-lg">Alper Kantarci 💻</p>
+    <a href="mailto:alper.kantarci@hotmail.com" class="text-zinc-700">alper.kantarci@hotmail.com</a>
+  </div>
+
+  <nav>
+    <ul class="flex flex-col gap-y-3">
+      <NavbarItem icon="mdi:home" label="Home" link="/" />
+      <NavbarItem icon="mdi:work" label="Experience" link="experience" />
+      <NavbarItem icon="mdi:note-edit" label="Writing" link="writing" />
+      <NavbarItem icon="mdi:devices" label="Setup" link="setup" />
+    </ul>
+  </nav>
+
+  <div class="flex items-end h-screen gap-x-5">
+    <a href="mailto:alper.kantarci@hotmail.com">
+      <Icon name="mdi:email" class="w-5 hover:text-teal-300" />
+    </a>
+    <a href="https://github.com/alperkantarci" target="_blank">
+      <Icon name="mdi:github" class="w-5 hover:text-teal-300" />
+    </a>
+    <a href="https://www.linkedin.com/in/alperkantarci/" target="_blank">
+      <Icon name="mdi:linkedin" class="w-5 hover:text-teal-300" />
+    </a>
+    <a href="https://www.instagram.com/alperkantrc/" target="_blank">
+      <Icon name="mdi:instagram" class="w-5 hover:text-teal-300" />
+    </a>
+    <a href="https://www.youtube.com/@alperkantarci7667/videos" target="_blank">
+      <Icon name="mdi:youtube" class="w-5 hover:text-teal-300" />
+    </a>
+  </div>
+</div>
+
+<!-- mobile navbar -->
+<div
+  class="text-zinc-300 text-sm lg:hidden fixed bottom-0 w-full flex items-center justify-around h-20 bg-zinc-900 backdrop-filter backdrop-blur-xl bg-opacity-60"
+>
+  <a
+    href="/"
+    class:list={['flex flex-col gap-y-1 items-center px-5 py-3 rounded-lg hover:bg-teal-950', { 'bg-teal-950': currentPath === '' }]}
+  >
+    <Icon name="mdi:home" class="w-5" />
+    Home
+  </a>
+  <a
+    href="experience"
+    class:list={[
+      'flex flex-col gap-y-1 items-center px-5 py-3 rounded-lg hover:bg-teal-950',
+      { 'bg-teal-950': currentPath === 'experience' },
+    ]}
+  >
+    <Icon name="mdi:work" class="w-5" />
+    Experience
+  </a>
+  <a
+    href="writing"
+    class:list={['flex flex-col gap-y-1 items-center px-5 py-3 rounded-lg hover:bg-teal-950', { 'bg-teal-950': currentPath === 'writing' }]}
+  >
+    <Icon name="mdi:note-edit" class="w-5" />
+    Writing
+  </a>
+  <a
+    href="setup"
+    class:list={['flex flex-col gap-y-1 items-center px-5 py-3 rounded-lg hover:bg-teal-950', { 'bg-teal-950': currentPath === 'setup' }]}
+  >
+    <Icon name="mdi:devices" class="w-5" />
+    Setup
+  </a>
+</div>

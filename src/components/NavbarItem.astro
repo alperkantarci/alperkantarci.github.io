@@ -1,0 +1,22 @@
+---
+import { Icon } from 'astro-icon';
+
+interface Props {
+  icon: string;
+  label: string;
+  link: string;
+}
+
+const { icon, label, link } = Astro.props;
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+const isActive = currentPath === link.split('/')[0];
+---
+
+<a href={link}>
+  <li class:list={['flex gap-x-4 px-6 py-2 rounded-lg items-center cursor-pointer hover:bg-teal-950', { 'bg-teal-950': isActive }]}>
+    <Icon name={icon} class="w-5" />
+    <div class="text-lg">{label}</div>
+  </li>
+</a>

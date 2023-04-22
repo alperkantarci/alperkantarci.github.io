@@ -1,9 +1,7 @@
 ---
+import MobileNavbarItem from './MobileNavbarItem.astro';
 import NavbarItem from './NavbarItem.astro';
 import { Icon } from 'astro-icon';
-
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1);
 ---
 
 <!-- dekstop navbar -->
@@ -23,7 +21,7 @@ const currentPath = pathname.slice(1);
     </ul>
   </nav>
 
-  <div class="flex items-end h-screen gap-x-5">
+  <div class="flex items-end justify-center h-screen gap-x-5">
     <a href="mailto:alper.kantarci@hotmail.com">
       <Icon name="mdi:email" class="w-5 hover:text-teal-300" />
     </a>
@@ -44,37 +42,10 @@ const currentPath = pathname.slice(1);
 
 <!-- mobile navbar -->
 <div
-  class="text-zinc-300 text-sm lg:hidden fixed bottom-0 w-full flex items-center justify-around h-20 bg-zinc-900 backdrop-filter backdrop-blur-xl bg-opacity-60"
+  class="text-zinc-300 text-sm lg:hidden fixed bottom-0 w-full flex items-center justify-around h-16 bg-zinc-900 backdrop-filter backdrop-blur-xl bg-opacity-60"
 >
-  <a
-    href="/"
-    class:list={['flex flex-col gap-y-1 items-center px-5 py-3 rounded-lg hover:bg-teal-950', { 'bg-teal-950': currentPath === '' }]}
-  >
-    <Icon name="mdi:home" class="w-5" />
-    Home
-  </a>
-  <a
-    href="/experience/"
-    class:list={[
-      'flex flex-col gap-y-1 items-center px-5 py-3 rounded-lg hover:bg-teal-950',
-      { 'bg-teal-950': currentPath === 'experience/' },
-    ]}
-  >
-    <Icon name="mdi:work" class="w-5" />
-    Experience
-  </a>
-  <a
-    href="/writing/"
-    class:list={['flex flex-col gap-y-1 items-center px-5 py-3 rounded-lg hover:bg-teal-950', { 'bg-teal-950': currentPath === 'writing/' }]}
-  >
-    <Icon name="mdi:note-edit" class="w-5" />
-    Writing
-  </a>
-  <a
-    href="/setup/"
-    class:list={['flex flex-col gap-y-1 items-center px-5 py-3 rounded-lg hover:bg-teal-950', { 'bg-teal-950': currentPath === 'setup/' }]}
-  >
-    <Icon name="mdi:devices" class="w-5" />
-    Setup
-  </a>
+  <MobileNavbarItem label="Home" icon="mdi:home" link="/" />
+  <MobileNavbarItem label="Experience" icon="mdi:work" link="/experience/" />
+  <MobileNavbarItem label="Writing" icon="mdi:note-edit" link="/writing/" />
+  <MobileNavbarItem label="Setup" icon="mdi:devices" link="/setup/" />
 </div>

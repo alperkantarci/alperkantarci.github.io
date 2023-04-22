@@ -2,17 +2,16 @@
 import { Icon } from 'astro-icon';
 
 interface Props {
-  label: string;
+  label?: string;
   icon: string;
   link: string;
 }
-const { label, icon, link } = Astro.props;
+const { icon, link } = Astro.props;
 
 const pathname = new URL(Astro.request.url).pathname;
 const isActive = pathname === link;
 ---
 
 <a href={link} class:list={['flex flex-col gap-y-1 items-center rounded-lg font-bold hover:text-teal-400', { 'text-teal-400': isActive }]}>
-  <Icon name={icon} class="w-5" />
-  {label}
+  <Icon name={icon} class="w-6" />
 </a>

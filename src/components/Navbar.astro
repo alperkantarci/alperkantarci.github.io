@@ -54,7 +54,7 @@ const currentPath = pathname.slice(1);
     Home
   </a>
   <a
-    href="/experience"
+    href="/experience/"
     class:list={[
       'flex flex-col gap-y-1 items-center px-5 py-3 rounded-lg hover:bg-teal-950',
       { 'bg-teal-950': currentPath === 'experience' },
@@ -64,14 +64,14 @@ const currentPath = pathname.slice(1);
     Experience
   </a>
   <a
-    href="/writing"
+    href="/writing/"
     class:list={['flex flex-col gap-y-1 items-center px-5 py-3 rounded-lg hover:bg-teal-950', { 'bg-teal-950': currentPath === 'writing' }]}
   >
     <Icon name="mdi:note-edit" class="w-5" />
     Writing
   </a>
   <a
-    href="/setup"
+    href="/setup/"
     class:list={['flex flex-col gap-y-1 items-center px-5 py-3 rounded-lg hover:bg-teal-950', { 'bg-teal-950': currentPath === 'setup' }]}
   >
     <Icon name="mdi:devices" class="w-5" />

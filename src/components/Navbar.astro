@@ -7,8 +7,11 @@ import { Icon } from 'astro-icon';
 <!-- dekstop navbar -->
 <div class="fixed hidden lg:w-72 border-r-[1px] border-zinc-900 text-zinc-300 h-screen lg:flex flex-col py-20 px-10">
   <div class="flex flex-col items-center mb-24">
-    <a href="/"><img src="/profile-photo.jpg" class="rounded-full w-28 mb-4" /></a>
-    <p class="mb-1 text-lg">Alper Kantarci 💻</p>
+    <a href="/"><img src="/profile-photo.jpg" class="rounded-full w-28 mb-4" alt="Profile Photo" loading="lazy" /></a>
+    <div class="flex gap-3 items-center">
+      <p class="mb-1 text-lg">Alper Kantarci</p>
+      <Icon name="mdi:laptop-mac" class="w-5 text-teal-300" />
+    </div>
     <a href="mailto:alper.kantarci@hotmail.com" class="text-zinc-700">alper.kantarci@hotmail.com</a>
   </div>
 
@@ -21,20 +24,21 @@ import { Icon } from 'astro-icon';
     </ul>
   </nav>
 
+  <!-- social icons -->
   <div class="flex items-end justify-center h-screen gap-x-5">
-    <a href="mailto:alper.kantarci@hotmail.com">
+    <a href="mailto:alper.kantarci@hotmail.com" title="email">
       <Icon name="mdi:email" class="w-5 hover:text-teal-300" />
     </a>
-    <a href="https://github.com/alperkantarci" target="_blank">
+    <a href="https://github.com/alperkantarci" target="_blank" title="github">
       <Icon name="mdi:github" class="w-5 hover:text-teal-300" />
     </a>
-    <a href="https://www.linkedin.com/in/alperkantarci/" target="_blank">
+    <a href="https://www.linkedin.com/in/alperkantarci/" target="_blank" title="linkedin">
       <Icon name="mdi:linkedin" class="w-5 hover:text-teal-300" />
     </a>
-    <a href="https://www.instagram.com/alperkantrc/" target="_blank">
+    <a href="https://www.instagram.com/alperkantrc/" target="_blank" title="instagram">
       <Icon name="mdi:instagram" class="w-5 hover:text-teal-300" />
     </a>
-    <a href="https://www.youtube.com/@alperkantarci7667/videos" target="_blank">
+    <a href="https://www.youtube.com/@alperkantarci7667/videos" target="_blank" title="youtube">
       <Icon name="mdi:youtube" class="w-5 hover:text-teal-300" />
     </a>
   </div>

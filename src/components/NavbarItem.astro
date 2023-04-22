@@ -14,7 +14,12 @@ const isActive = pathname === link;
 ---
 
 <a href={link}>
-  <li class:list={['flex gap-x-4 px-6 py-2 rounded-lg items-center cursor-pointer hover:bg-teal-950', { 'bg-teal-950': isActive }]}>
+  <li
+    class:list={[
+      'flex gap-x-4 px-6 py-2 font-extrabold rounded-lg items-center cursor-pointer hover:bg-teal-950 hover:text-teal-200 hover:font-extrabold',
+      { 'bg-teal-950 text-teal-200 font-extrabold': isActive },
+    ]}
+  >
     <Icon name={icon} class="w-5" />
     <div class="text-lg">{label}</div>
   </li>

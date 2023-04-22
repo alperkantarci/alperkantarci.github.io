@@ -9,10 +9,8 @@ interface Props {
 
 const { icon, label, link } = Astro.props;
 
-const actualLink = link.split('/')[1];
 const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1);
-const isActive = currentPath === actualLink;
+const isActive = pathname === link;
 ---
 
 <a href={link}>

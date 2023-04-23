@@ -28,6 +28,10 @@ const { title } = Astro.props;
   </head>
   <body class="bg-zinc-950 font-nunito text-zinc-300">
     <Navbar />
-    <slot />
+    <main
+      class="relative lg:left-72 lg:w-[calc(100%-18rem)] p-10 md:px-14 md:py-14 lg:px-16 lg:py-20 xl:px-40 xl:py-20 2xl:px-72 2xl:py-20 pb-24 md:pb-24"
+    >
+      <slot />
+    </main>
   </body>
 </html>

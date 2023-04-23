@@ -1,17 +1,70 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import { Icon } from 'astro-icon';
 ---
 
 <Layout title="Home">
-  <main class="p-10 md:px-24 md:py-16 lg:px-48 lg:py-16 lg:ml-72">
-    <h2 class="text-3xl font-bold mb-28">Hey, I'm Alper 👋</h2>
+  <h2 class="text-3xl font-bold mb-12">Hey, I'm Alper 👋</h2>
 
-    <p class="text-xl">
-      I’m a full-stack <a href="https://github.com/alperkantarci" target="_blank" class="text-teal-300">developer</a> and bedroom <a
-        href="https://www.youtube.com/@alperkantarci7667/featured"
-        target="_blank"
-        class="text-teal-300">producer</a
-      > based in Prizren, Kosovo.
+  <div class="text-xl mb-16">
+    <p>
+      I’m a full-stack <a href="https://github.com/alperkantarci" target="_blank" class="text-teal-300">developer</a> based in Prizren, Kosovo.
     </p>
-  </main>
+    <p>I love design and code.</p>
+    <br />
+    <p>
+      I love making <a href="https://www.youtube.com/@alperkantarci7667/featured" target="_blank" class="text-teal-300">music</a>. I'm a
+      person who is very interested and enthusiastic about music production. I appreciate the subtleties and nuances of music. I value and
+      use technology that allows me to delve deeper into sound and audio.
+    </p>
+  </div>
+
+  <h3 class="text-2xl font-bold mb-12">Work</h3>
+  <div class="text-xl flex flex-col gap-6 text-teal-100">
+    <a href="https://sechard.com" target="_blank" class="flex justify-between items-center bg-teal-950 rounded-xl p-5">
+      <div>
+        <p class="mb-4 font-extrabold">SecHard</p>
+        <p class="font-bold text-teal-400">Full-stack developer</p>
+        <p class="text-lg text-teal-700">Sept/2019 - Jan/2023</p>
+      </div>
+      <div class="hidden md:flex flex-row gap-2 text-teal-900">
+        <Icon name="mdi:angular" class="md:w-14 xl:w-16" title="Angular" />
+        <Icon name="mdi:nodejs" class="md:w-14 xl:w-16" title="Nodejs" />
+        <Icon name="mdi:language-typescript" class="md:w-14 xl:w-16" title="Typescript" />
+        <Icon name="mdi:language-python" class="md:w-14 xl:w-16" title="Python" />
+        <Icon name="mdi:language-java" class="md:w-14 xl:w-16" title="Java" />
+        <Icon name="mdi:docker" class="md:w-14 xl:w-16" title="Docker" />
+      </div>
+    </a>
+    <a href="https://genetek.com.tr" target="_blank" class="flex justify-between items-center bg-teal-950 rounded-xl p-5">
+      <div>
+        <p class="mb-4 font-extrabold">Genetek</p>
+        <p class="font-bold text-teal-400">Full-stack developer</p>
+        <p class="text-lg text-teal-700">Nov/2017 - Nov/2018</p>
+      </div>
+      <div class="hidden md:flex flex-row gap-2 text-teal-900">
+        <Icon name="mdi:language-javascript" class="md:w-14 xl:w-16" title="Javascript" />
+        <Icon name="mdi:language-csharp" class="md:w-14 xl:w-16" title="C#" />
+        <Icon name="mdi:dot-net" class="md:w-14 xl:w-16" title=".NET Core" />
+        <Icon name="mdi:api" class="md:w-14 xl:w-16" title="API" />
+        <Icon name="mdi:language-html5" class="md:w-14 xl:w-16" title="HTML" />
+        <Icon name="mdi:language-css3" class="md:w-14 xl:w-16" title="CSS" />
+      </div>
+    </a>
+    <a target="_blank" class="flex justify-between bg-teal-950 rounded-xl p-5">
+      <div>
+        <p class="mb-4 font-extrabold">Feronto</p>
+        <p class="font-bold text-teal-400">Full-stack developer</p>
+        <p class="text-lg text-teal-700">Jan/2017 - Sept/2017</p>
+      </div>
+      <div class="hidden md:flex flex-row gap-2 text-teal-900">
+        <Icon name="mdi:language-javascript" class="md:w-14 xl:w-16" title="Javascript" />
+        <Icon name="mdi:language-java" class="md:w-14 xl:w-16" title="Java" />
+        <Icon name="mdi:android" class="md:w-14 xl:w-16" title=".NET Core" />
+        <Icon name="mdi:api" class="md:w-14 xl:w-16" title="API" />
+        <Icon name="mdi:language-html5" class="md:w-14 xl:w-16" title="HTML" />
+        <Icon name="mdi:language-css3" class="md:w-14 xl:w-16" title="CSS" />
+      </div>
+    </a>
+  </div>
 </Layout>

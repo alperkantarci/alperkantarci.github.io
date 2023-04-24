@@ -9,14 +9,15 @@ interface TechStackIcon {
 interface Props {
   company: string;
   position: string;
+  link?: string;
   date: string;
   techStackIcons: Array<TechStackIcon>;
 }
 
-const { company, position, date, techStackIcons } = Astro.props;
+const { company, position, link, date, techStackIcons } = Astro.props;
 ---
 
-<a href="https://sechard.com" target="_blank" class="flex justify-between items-center bg-teal-950 rounded-xl p-5">
+<a href={link} target="_blank" class="flex justify-between items-center bg-teal-950 rounded-xl p-5">
   <div>
     <p class="mb-4 font-extrabold">{company}</p>
     <p class="font-bold text-teal-400">{position}</p>

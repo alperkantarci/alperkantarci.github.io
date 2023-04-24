@@ -42,6 +42,7 @@ const genetek: Company = {
 };
 
 const feronto: Company = {
+  link: '#',
   name: 'Feronto',
   position: 'Full-stack developer',
   date: 'Nov/2017 - Nov/2018',

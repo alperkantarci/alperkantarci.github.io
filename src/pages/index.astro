@@ -1,66 +1,53 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import WorkCard from '@components/WorkCard.astro';
+import { Icon } from 'astro-icon';
+
+import { github, linkedin, youtube, mailto } from 'src/constants/social-links';
+import companies from 'src/constants/work-info';
 ---
 
 <Layout title="Home">
-  <h2 class="text-3xl font-bold mb-12">Hey, I'm Alper 👋</h2>
+  <h2 class="text-3xl font-bold">Hey, I'm Alper 👋,</h2>
+  <h2 class="text-3xl font-bold mb-12">a full-stack developer with 6 years of experience.</h2>
 
-  <div class="text-xl mb-16">
+  <div class="text-xl mb-12">
     <p>
-      I’m a full-stack <a href="https://github.com/alperkantarci" target="_blank" class="text-teal-300">developer</a> based in Prizren, Kosovo.
+      I’m a full-stack <a href={github} target="_blank" class="text-teal-300">developer</a> based in Prizren, Kosovo.
     </p>
     <p>I love design and code.</p>
     <br />
     <p>
-      I love making <a href="https://www.youtube.com/@alperkantarci7667/featured" target="_blank" class="text-teal-300">music</a>. I'm a
-      person who is very interested and enthusiastic about music production. I appreciate the subtleties and nuances of music. I value and
-      use technology that allows me to delve deeper into sound and audio.
+      I love making <a href={youtube} target="_blank" class="text-teal-300">music</a>. I'm a person who is very interested and enthusiastic
+      about music production. I appreciate the subtleties and nuances of music. I value and use technology that allows me to delve deeper
+      into sound and audio.
     </p>
+  </div>
+
+  <div class="flex gap-3 text-xl mb-16 items-center text-teal-100">
+    <a href={mailto} class="border-teal-900 border-2 rounded-full px-5 py-2">Contact me</a>
+    <a href={github} target="_blank" class="rounded-full border-2 p-3 border-teal-900">
+      <Icon name="mdi:github" class="w-5" />
+    </a>
+    <a href={linkedin} target="_blank" class="rounded-full border-2 p-3 border-teal-900">
+      <Icon name="mdi:linkedin" class="w-5" />
+    </a>
   </div>
 
   <h3 class="text-2xl font-bold mb-12">Work</h3>
   <div class="text-xl flex flex-col gap-6">
-    <WorkCard
-      company="SecHard"
-      position="Full-stack developer"
-      link="https://sechard.com"
-      date="Sept/2019 - Jan/2023"
-      techStackIcons={[
-        { name: 'mdi:angular', title: 'Angular' },
-        { name: 'mdi:nodejs', title: 'Nodejs' },
-        { name: 'mdi:language-typescript', title: 'Typescript' },
-        { name: 'mdi:language-python', title: 'Python' },
-        { name: 'mdi:language-java', title: 'Java' },
-        { name: 'mdi:docker', title: 'Docker' },
-      ]}
-    />
-    <WorkCard
-      company="Genetek"
-      position="Full-stack developer"
-      link="https://genetek.com.tr"
-      date="Nov/2017 - Nov/2018"
-      techStackIcons={[
-        { name: 'mdi:language-javascript', title: 'Javascript' },
-        { name: 'mdi:language-csharp', title: 'C#' },
-        { name: 'mdi:dot-net', title: '.NET Core' },
-        { name: 'mdi:api', title: 'API' },
-        { name: 'mdi:language-html5', title: 'HTML5' },
-        { name: 'mdi:language-css3', title: 'CSS3' },
-      ]}
-    />
-    <WorkCard
-      company="Feronto"
-      position="Full-stack developer"
-      date="Jan/2017 - Sept/2017"
-      techStackIcons={[
-        { name: 'mdi:language-javascript', title: 'Javascript' },
-        { name: 'mdi:language-java', title: 'Java' },
-        { name: 'mdi:android', title: 'Android' },
-        { name: 'mdi:api', title: 'API' },
-        { name: 'mdi:language-html5', title: 'HTML5' },
-        { name: 'mdi:language-css3', title: 'CSS3' },
-      ]}
-    />
+    {
+      companies.map((company) => {
+        return (
+          <WorkCard
+            name={company.name}
+            position={company.position}
+            link={company.link}
+            date={company.date}
+            techStackIcons={company.techStackIcons}
+          />
+        );
+      })
+    }
   </div>
 </Layout>

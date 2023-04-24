@@ -1,25 +1,16 @@
 ---
 import { Icon } from 'astro-icon';
 
-interface TechStackIcon {
-  name: string;
-  title: string;
-}
+import type { Company } from 'src/constants/work-info';
 
-interface Props {
-  company: string;
-  position: string;
-  link?: string;
-  date: string;
-  techStackIcons: Array<TechStackIcon>;
-}
+interface Props extends Company {}
 
-const { company, position, link, date, techStackIcons } = Astro.props;
+const { name, position, link, date, techStackIcons } = Astro.props;
 ---
 
 <a href={link} target="_blank" class="flex justify-between items-center border-teal-950 border-2 rounded-xl p-5 text-teal-100">
   <div>
-    <p class="mb-4 font-extrabold">{company}</p>
+    <p class="mb-4 font-extrabold">{name}</p>
     <p class="font-bold text-teal-400">{position}</p>
     <p class="text-lg text-teal-700">{date}</p>
   </div>

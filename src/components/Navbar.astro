@@ -2,6 +2,7 @@
 import MobileNavbarItem from './MobileNavbarItem.astro';
 import NavbarItem from './NavbarItem.astro';
 import { Icon } from 'astro-icon';
+import { github, linkedin, instagram, mail, mailto, youtube } from 'src/constants/social-links';
 ---
 
 <div class="fixed hidden lg:w-72 border-r-[1px] border-zinc-900 text-zinc-300 h-screen lg:flex flex-col pt-12 pb-10 px-5">
@@ -11,7 +12,7 @@ import { Icon } from 'astro-icon';
       <p class="mb-1 text-lg">Alper Kantarci</p>
       <Icon name="mdi:laptop-mac" class="w-5 text-teal-300" />
     </div>
-    <a href="mailto:alper.kantarci@hotmail.com" class="text-zinc-700">alper.kantarci@hotmail.com</a>
+    <a href={mailto} class="text-zinc-700">{mail}</a>
   </div>
 
   <nav class="mb-16">
@@ -24,19 +25,19 @@ import { Icon } from 'astro-icon';
   </nav>
 
   <div class="flex items-end h-screen gap-x-5 px-4">
-    <a href="mailto:alper.kantarci@hotmail.com" title="email">
+    <a href={mailto} title="email">
       <Icon name="mdi:email" class="w-5 hover:text-teal-300" />
     </a>
-    <a href="https://github.com/alperkantarci" target="_blank" title="github">
+    <a href={github} target="_blank" title="github">
       <Icon name="mdi:github" class="w-5 hover:text-teal-300" />
     </a>
-    <a href="https://www.linkedin.com/in/alperkantarci/" target="_blank" title="linkedin">
+    <a href={linkedin} target="_blank" title="linkedin">
       <Icon name="mdi:linkedin" class="w-5 hover:text-teal-300" />
     </a>
-    <a href="https://www.instagram.com/alperkantrc/" target="_blank" title="instagram">
+    <a href={instagram} target="_blank" title="instagram">
       <Icon name="mdi:instagram" class="w-5 hover:text-teal-300" />
     </a>
-    <a href="https://www.youtube.com/@alperkantarci7667/videos" target="_blank" title="youtube">
+    <a href={youtube} target="_blank" title="youtube">
       <Icon name="mdi:youtube" class="w-5 hover:text-teal-300" />
     </a>
   </div>

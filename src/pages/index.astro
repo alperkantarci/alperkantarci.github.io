@@ -1,6 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import { Icon } from 'astro-icon';
+import WorkCard from '@components/WorkCard.astro';
 ---
 
 <Layout title="Home">
@@ -21,50 +21,44 @@ import { Icon } from 'astro-icon';
 
   <h3 class="text-2xl font-bold mb-12">Work</h3>
   <div class="text-xl flex flex-col gap-6 text-teal-100">
-    <a href="https://sechard.com" target="_blank" class="flex justify-between items-center bg-teal-950 rounded-xl p-5">
-      <div>
-        <p class="mb-4 font-extrabold">SecHard</p>
-        <p class="font-bold text-teal-400">Full-stack developer</p>
-        <p class="text-lg text-teal-700">Sept/2019 - Jan/2023</p>
-      </div>
-      <div class="hidden md:flex flex-row gap-2 text-teal-900">
-        <Icon name="mdi:angular" class="md:w-14 xl:w-16" title="Angular" />
-        <Icon name="mdi:nodejs" class="md:w-14 xl:w-16" title="Nodejs" />
-        <Icon name="mdi:language-typescript" class="md:w-14 xl:w-16" title="Typescript" />
-        <Icon name="mdi:language-python" class="md:w-14 xl:w-16" title="Python" />
-        <Icon name="mdi:language-java" class="md:w-14 xl:w-16" title="Java" />
-        <Icon name="mdi:docker" class="md:w-14 xl:w-16" title="Docker" />
-      </div>
-    </a>
-    <a href="https://genetek.com.tr" target="_blank" class="flex justify-between items-center bg-teal-950 rounded-xl p-5">
-      <div>
-        <p class="mb-4 font-extrabold">Genetek</p>
-        <p class="font-bold text-teal-400">Full-stack developer</p>
-        <p class="text-lg text-teal-700">Nov/2017 - Nov/2018</p>
-      </div>
-      <div class="hidden md:flex flex-row gap-2 text-teal-900">
-        <Icon name="mdi:language-javascript" class="md:w-14 xl:w-16" title="Javascript" />
-        <Icon name="mdi:language-csharp" class="md:w-14 xl:w-16" title="C#" />
-        <Icon name="mdi:dot-net" class="md:w-14 xl:w-16" title=".NET Core" />
-        <Icon name="mdi:api" class="md:w-14 xl:w-16" title="API" />
-        <Icon name="mdi:language-html5" class="md:w-14 xl:w-16" title="HTML" />
-        <Icon name="mdi:language-css3" class="md:w-14 xl:w-16" title="CSS" />
-      </div>
-    </a>
-    <a target="_blank" class="flex justify-between bg-teal-950 rounded-xl p-5">
-      <div>
-        <p class="mb-4 font-extrabold">Feronto</p>
-        <p class="font-bold text-teal-400">Full-stack developer</p>
-        <p class="text-lg text-teal-700">Jan/2017 - Sept/2017</p>
-      </div>
-      <div class="hidden md:flex flex-row gap-2 text-teal-900">
-        <Icon name="mdi:language-javascript" class="md:w-14 xl:w-16" title="Javascript" />
-        <Icon name="mdi:language-java" class="md:w-14 xl:w-16" title="Java" />
-        <Icon name="mdi:android" class="md:w-14 xl:w-16" title=".NET Core" />
-        <Icon name="mdi:api" class="md:w-14 xl:w-16" title="API" />
-        <Icon name="mdi:language-html5" class="md:w-14 xl:w-16" title="HTML" />
-        <Icon name="mdi:language-css3" class="md:w-14 xl:w-16" title="CSS" />
-      </div>
-    </a>
+    <WorkCard
+      company="SecHard"
+      position="Full-stack developer"
+      date="Sept/2019 - Jan/2023"
+      techStackIcons={[
+        { name: 'mdi:angular', title: 'Angular' },
+        { name: 'mdi:nodejs', title: 'Nodejs' },
+        { name: 'mdi:language-typescript', title: 'Typescript' },
+        { name: 'mdi:language-python', title: 'Python' },
+        { name: 'mdi:language-java', title: 'Java' },
+        { name: 'mdi:docker', title: 'Docker' },
+      ]}
+    />
+    <WorkCard
+      company="SecHard"
+      position="Full-stack developer"
+      date="Sept/2019 - Jan/2023"
+      techStackIcons={[
+        { name: 'mdi:language-javascript', title: 'Javascript' },
+        { name: 'mdi:language-csharp', title: 'C#' },
+        { name: 'mdi:dot-net', title: '.NET Core' },
+        { name: 'mdi:api', title: 'API' },
+        { name: 'mdi:language-html5', title: 'HTML5' },
+        { name: 'mdi:language-css3', title: 'CSS3' },
+      ]}
+    />
+    <WorkCard
+      company="SecHard"
+      position="Full-stack developer"
+      date="Sept/2019 - Jan/2023"
+      techStackIcons={[
+        { name: 'mdi:language-javascript', title: 'Javascript' },
+        { name: 'mdi:language-java', title: 'Java' },
+        { name: 'mdi:android', title: 'Android' },
+        { name: 'mdi:api', title: 'API' },
+        { name: 'mdi:language-html5', title: 'HTML5' },
+        { name: 'mdi:language-css3', title: 'CSS3' },
+      ]}
+    />
   </div>
 </Layout>

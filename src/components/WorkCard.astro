@@ -1,0 +1,32 @@
+---
+import { Icon } from 'astro-icon';
+
+interface TechStackIcon {
+  name: string;
+  title: string;
+}
+
+interface Props {
+  company: string;
+  position: string;
+  date: string;
+  techStackIcons: Array<TechStackIcon>;
+}
+
+const { company, position, date, techStackIcons } = Astro.props;
+---
+
+<a href="https://sechard.com" target="_blank" class="flex justify-between items-center bg-teal-950 rounded-xl p-5">
+  <div>
+    <p class="mb-4 font-extrabold">{company}</p>
+    <p class="font-bold text-teal-400">{position}</p>
+    <p class="text-lg text-teal-700">{date}</p>
+  </div>
+  <div class="hidden md:flex flex-row gap-2 text-teal-900">
+    {
+      techStackIcons.map(({ name, title }) => {
+        return <Icon class="md:w-14 xl:w-16" name={name} title={title} />;
+      })
+    }
+  </div>
+</a>

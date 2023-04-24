@@ -1,0 +1,23 @@
+/* The integration's default injected base.css file */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* scrollbar styles */
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    @apply w-4;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    @apply bg-zinc-950 rounded-full;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-zinc-600 rounded-full border-solid border-4 border-zinc-950;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-teal-800;
+  }
+}

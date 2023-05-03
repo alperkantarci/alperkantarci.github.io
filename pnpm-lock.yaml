@@ -10,9 +10,12 @@ dependencies:
   astro-icon:
     specifier: ^0.8.0
     version: 0.8.0
+  astro-seo:
+    specifier: ^0.7.2
+    version: 0.7.2
   tailwindcss:
     specifier: ^3.0.24
-    version: 3.3.1(postcss@8.4.23)
+    version: 3.3.1
 
 packages:
 
@@ -91,7 +94,7 @@ packages:
       autoprefixer: 10.4.14(postcss@8.4.23)
       postcss: 8.4.23
       postcss-load-config: 4.0.1(postcss@8.4.23)
-      tailwindcss: 3.3.1(postcss@8.4.23)
+      tailwindcss: 3.3.1
     transitivePeerDependencies:
       - ts-node
     dev: false
@@ -814,6 +817,10 @@ packages:
       node-fetch: 3.3.1
       resolve-pkg: 2.0.0
       svgo: 2.8.0
+    dev: false
+
+  /astro-seo@0.7.2:
+    resolution: {integrity: sha512-YnSqj4E6vbF7wRk3gcxOPHBjenhfgaINEJlTsnu4sovAyfyGEdQksbioYKoZ+vERRDaYvEricfSzC6fc9lieww==}
     dev: false
 
   /astro@2.3.0:
@@ -3105,12 +3112,10 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /tailwindcss@3.3.1(postcss@8.4.23):
+  /tailwindcss@3.3.1:
     resolution: {integrity: sha512-Vkiouc41d4CEq0ujXl6oiGFQ7bA3WEhUZdTgXAhtKxSy49OmKs8rEfQmupsfF0IGW8fv2iQkp1EVUuapCFrZ9g==}
     engines: {node: '>=12.13.0'}
     hasBin: true
-    peerDependencies:
-      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3

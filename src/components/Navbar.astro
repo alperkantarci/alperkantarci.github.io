@@ -3,13 +3,22 @@ import MobileNavbarItem from './MobileNavbarItem.astro';
 import NavbarItem from './NavbarItem.astro';
 import { Icon } from 'astro-icon';
 import { github, linkedin, instagram, mail, mailto, youtube } from 'src/constants/social-links';
+import { Image } from '@astrojs/image/components';
 ---
 
 <div class="fixed hidden lg:w-72 border-r-[1px] border-zinc-900 text-zinc-300 h-screen lg:flex flex-col pt-12 pb-10 px-5">
   <div class="flex flex-col items-center mb-24">
-    <a href="/" aria-label="Home"
-      ><img src="/profile-photo.webp" class="rounded-full w-28 h-28 mb-4" alt="Profile Photo" loading="lazy" /></a
-    >
+    <a href="/" aria-label="Home">
+      <Image
+        class="rounded-full mb-4"
+        src="/images/profile/profile-photo.webp"
+        width={112}
+        height={112}
+        alt="Profile Photo"
+        format="webp"
+        loading="lazy"
+      />
+    </a>
     <div class="flex gap-3 items-center">
       <p class="mb-1 text-lg font-bold text-zinc-50">Alper Kantarci</p>
       <Icon name="mdi:laptop-mac" class="w-5 text-teal-300" />
@@ -20,9 +29,9 @@ import { github, linkedin, instagram, mail, mailto, youtube } from 'src/constant
   <nav class="mb-16">
     <ul class="flex flex-col gap-y-3">
       <NavbarItem icon="mdi:home" label="Home" link="/" />
-      <NavbarItem icon="mdi:rocket-launch" label="Experience" link="/experience/" />
-      <NavbarItem icon="mdi:note-edit" label="Writing" link="/writing/" />
-      <NavbarItem icon="mdi:devices" label="Setup" link="/setup/" />
+      <NavbarItem icon="mdi:rocket-launch" label="Experience" link="/experience" />
+      <NavbarItem icon="mdi:note-edit" label="Writing" link="/writing" />
+      <NavbarItem icon="mdi:devices" label="Setup" link="/setup" />
     </ul>
   </nav>
 
@@ -49,7 +58,7 @@ import { github, linkedin, instagram, mail, mailto, youtube } from 'src/constant
   class="text-zinc-300 text-sm lg:hidden fixed bottom-0 w-full flex items-center justify-around h-16 border-t-[1px] border-zinc-900 backdrop-filter bg-zinc-950 backdrop-blur-xl bg-opacity-70 z-10"
 >
   <MobileNavbarItem label="Home" icon="mdi:home" link="/" />
-  <MobileNavbarItem label="Experience" icon="mdi:work" link="/experience/" />
-  <MobileNavbarItem label="Writing" icon="mdi:note-edit" link="/writing/" />
-  <MobileNavbarItem label="Setup" icon="mdi:devices" link="/setup/" />
+  <MobileNavbarItem label="Experience" icon="mdi:work" link="/experience" />
+  <MobileNavbarItem label="Writing" icon="mdi:note-edit" link="/writing" />
+  <MobileNavbarItem label="Setup" icon="mdi:devices" link="/setup" />
 </div>

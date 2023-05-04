@@ -1,0 +1,25 @@
+---
+import HardwareItem from '@components/HardwareItem.astro';
+import SetupFilter from '@components/SetupFilter.astro';
+import Layout from '@layouts/Layout.astro';
+import setupItems from 'src/constants/setup-items';
+
+const category = Astro.url.pathname.split('/').pop() || '';
+---
+
+<Layout title="Setup">
+  <h2 class="text-3xl font-bold mb-24">Setup 💻</h2>
+
+  <SetupFilter category={category} />
+
+  <!-- grid -->
+  <div class="grid grid-cols-1 gap-y-8 gap-x-5 md:grid-cols-2">
+    {
+      setupItems
+        .filter((setupItem) => setupItem.category === category)
+        .map((setupItem) => {
+          return <HardwareItem setupItem={setupItem} />;
+        })
+    }
+  </div>
+</Layout>

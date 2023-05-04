@@ -1,0 +1,22 @@
+---
+import type { SetupItem } from 'src/constants/setup-items';
+import { Image } from '@astrojs/image/components';
+
+type Props = {
+  setupItem: SetupItem;
+};
+
+const { setupItem } = Astro.props;
+---
+
+<a class="flex flex-col items-center gap-4" href="">
+  <Image
+    src={setupItem.img}
+    alt={setupItem.name}
+    width={1400}
+    height={720}
+    format={'jpg'}
+    class="rounded-2xl w-full h-72 border-2 border-teal-950"
+  />
+  <p class="font-bold text-xl">{setupItem.name}</p>
+</a>

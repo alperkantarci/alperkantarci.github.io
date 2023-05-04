@@ -9,8 +9,8 @@ interface Props {
 
 const { icon, label, link } = Astro.props;
 
-const pathname = new URL(Astro.request.url).pathname;
-const isActive = pathname === link;
+const { pathname } = Astro.url;
+const isActive = link !== '/' ? pathname.includes(link) : pathname === link;
 ---
 
 <li>
@@ -18,8 +18,8 @@ const isActive = pathname === link;
     href={link}
     aria-label={label}
     class:list={[
-      'flex gap-x-4 px-4 py-2 font-extrabold rounded-lg items-center cursor-pointer hover:border-teal-950 hover:text-teal-200 hover:font-extrabold',
-      { 'border-teal-950 border-2 text-teal-200 font-extrabold': isActive },
+      'flex gap-x-4 px-4 py-2 font-extrabold rounded-lg items-center cursor-pointer hover:border-teal-950 hover:text-teal-400 hover:font-extrabold',
+      { 'text-teal-400': isActive },
     ]}
   >
     <Icon name={icon} class="w-5" />

@@ -4,7 +4,11 @@ import SetupFilter from '@components/SetupFilter.astro';
 import Layout from '@layouts/Layout.astro';
 import setupItems from 'src/constants/setup-items';
 
-const category = Astro.url.pathname.split('/').pop() || '';
+const category =
+  Astro.url.pathname
+    .split('/')
+    .filter((i) => i.trim())
+    .pop() || '';
 ---
 
 <Layout title="Setup">

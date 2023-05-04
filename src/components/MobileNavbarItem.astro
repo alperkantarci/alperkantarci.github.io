@@ -9,7 +9,7 @@ interface Props {
 const { icon, link } = Astro.props;
 
 const pathname = new URL(Astro.request.url).pathname;
-const isActive = pathname === link;
+const isActive = link !== '/' ? pathname.includes(link) : pathname === link;
 ---
 
 <a

@@ -16,4 +16,6 @@ export default defineConfig({
     image(),
   ],
   site: 'https://alperk.dev',
+  // github pages adds trailingSlash automatically
+  trailingSlash: 'always',
 });

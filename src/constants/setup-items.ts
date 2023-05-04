@@ -73,6 +73,12 @@ const setupItems: Array<SetupItem> = [
     link: 'https://www.bhphotovideo.com/c/product/839523-REG/Line_6_99_072_0515_MOBILE_KEYS_49_CONTROLLER.html',
   },
   {
+    name: 'Midistart Music 25',
+    img: '/images/setup/midistart-music-25-min.jpg',
+    category: 'music',
+    link: 'https://miditech.de/en/portfolio/midistart-music-25/',
+  },
+  {
     name: 'Amazon Kindle Paperwhite 4',
     img: '/images/setup/amazon-kindle-paperwhite-4-min.jpg',
     category: 'e-reader',

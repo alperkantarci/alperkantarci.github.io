@@ -9,14 +9,15 @@ type Props = {
 const { setupItem } = Astro.props;
 ---
 
-<a class="flex flex-col items-center gap-4" href="">
+<a class="flex flex-col items-center gap-4" href={setupItem.link} target="_blank">
   <Image
     src={setupItem.img}
     alt={setupItem.name}
-    width={1400}
-    height={720}
-    format={'jpg'}
-    class="rounded-2xl w-full h-72 border-2 border-teal-950"
+    width={1024}
+    height={768}
+    aspectRatio="4:3"
+    format={'avif'}
+    class="rounded-2xl w-full h-72 border-2 object-cover border-teal-950"
   />
   <p class="font-bold text-xl">{setupItem.name}</p>
 </a>

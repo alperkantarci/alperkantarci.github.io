@@ -11,7 +11,7 @@ const StackItem = ({ item }: Props) => {
       href={item.link}
       target="_blank"
     >
-      <img className={'rounded-xl md:rounded-2xl w-16 md:w-20'} src={item.img} alt="Test" loading={'lazy'} />
+      <img className={'rounded-xl md:rounded-2xl w-16 md:w-20'} src={item.img} alt={item.name} loading={'lazy'} />
       <p className={'text-center'}>{item.name}</p>
     </a>
   );

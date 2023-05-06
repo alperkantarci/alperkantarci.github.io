@@ -32,6 +32,7 @@ import { Image } from '@astrojs/image/components';
       <NavbarItem icon="mdi:rocket-launch" label="Experience" link="/experience/" />
       <NavbarItem icon="mdi:note-edit" label="Writing" link="/writing/" />
       <NavbarItem icon="mdi:devices" label="Setup" link="/setup/" />
+      <NavbarItem icon="mdi:y-combinator" iconColor="text-orange-500" label="Hacker News" link="/hacker-news/" />
     </ul>
   </nav>
 
@@ -58,7 +59,8 @@ import { Image } from '@astrojs/image/components';
   class="text-zinc-300 text-sm lg:hidden fixed bottom-0 w-full flex items-center justify-around h-16 border-t-[1px] border-zinc-900 backdrop-filter bg-zinc-950 backdrop-blur-xl bg-opacity-70 z-10"
 >
   <MobileNavbarItem label="Home" icon="mdi:home" link="/" />
-  <MobileNavbarItem label="Experience" icon="mdi:work" link="/experience/" />
+  <MobileNavbarItem label="Experience" icon="mdi:rocket-launch" link="/experience/" />
   <MobileNavbarItem label="Writing" icon="mdi:note-edit" link="/writing/" />
   <MobileNavbarItem label="Setup" icon="mdi:devices" link="/setup/" />
+  <MobileNavbarItem label="Hacker News" icon="mdi:y-combinator" link="/hacker-news/" />
 </div>

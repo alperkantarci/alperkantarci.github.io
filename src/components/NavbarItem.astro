@@ -3,11 +3,12 @@ import { Icon } from 'astro-icon';
 
 interface Props {
   icon: string;
+  iconColor?: string;
   label: string;
   link: string;
 }
 
-const { icon, label, link } = Astro.props;
+const { icon, iconColor, label, link } = Astro.props;
 
 const { pathname } = Astro.url;
 const isActive = link !== '/' ? pathname.includes(link) : pathname === link;
@@ -22,7 +23,7 @@ const isActive = link !== '/' ? pathname.includes(link) : pathname === link;
       { 'text-teal-400': isActive },
     ]}
   >
-    <Icon name={icon} class="w-5" />
+    <Icon name={icon} class:list={['w-5', iconColor]} />
     <div class="text-lg">{label}</div>
   </a>
 </li>

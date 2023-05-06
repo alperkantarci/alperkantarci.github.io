@@ -29,7 +29,7 @@ const HackerNews = ({ newsId }: Props) => {
   }, []);
 
   return (
-    <a href={details?.url} target="_blank" className={'flex flex-col gap-4 border-2 border-teal-950 rounded-xl p-4'}>
+    <a href={details?.url} target="_blank" className={'flex flex-col gap-4 border-2 border-teal-950 rounded-xl p-4 visited:text-teal-400'}>
       <p className={'font-bold'}>{details?.title}</p>
       <p className={'text-base text-zinc-500'}>
         <span className={'text-teal-200'}>{details?.score}</span> points by <span className={'text-teal-200'}>{details?.by}</span>

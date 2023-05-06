@@ -57,7 +57,7 @@ const HackerNewsList = () => {
       <div
         className={'flex justify-between items-center gap-4 text-sm font-bold sticky bg-zinc-950 bg-opacity-60 top-0 backdrop-blur-xl py-3'}
       >
-        <ul className={'flex gap-3'}>
+        <ul className={'hidden sm:flex gap-3'}>
           <li>
             <button
               className={`px-4 py-3 rounded-lg border-2 border-teal-950 ${storyFilter === StoryFilter.TopStories ? 'bg-teal-900' : ''}`}
@@ -76,11 +76,11 @@ const HackerNewsList = () => {
           </li>
         </ul>
 
-        <ul className={'flex gap-3 items-center'}>
+        <ul className={'flex flex-wrap gap-3 items-center w-full justify-between sm:w-auto'}>
           <li className={'px-4 py-3'}>
             {page} / {totalPages}
           </li>
-          <li>
+          <li className={'order-[-1] sm:order-none'}>
             <button
               className={'px-4 py-3 rounded-lg border-2 border-teal-950 disabled:text-zinc-600'}
               onClick={previousPage}

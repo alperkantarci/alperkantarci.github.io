@@ -1,11 +1,11 @@
-type SetupItem = {
+type Product = {
   name: string;
   img: string;
   category: string;
   link?: string;
 };
 
-const setupItems: Array<SetupItem> = [
+const products: Array<Product> = [
   {
     name: 'Lenovo Legion 5 15ARH05H',
     img: '/images/setup/jpg/lenovo-legion-5-min.jpg',
@@ -86,5 +86,5 @@ const setupItems: Array<SetupItem> = [
   },
 ];
 
-export default setupItems;
-export type { SetupItem };
+export default products;
+export type { Product };

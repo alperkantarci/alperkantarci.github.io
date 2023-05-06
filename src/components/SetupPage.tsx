@@ -1,15 +1,18 @@
-import HardwareItem from '@components/HardwareItem';
-import setupItems from 'src/constants/setup-items';
+import Product from '@components/Product';
+import products from 'src/constants/products';
+import stack from 'src/constants/stack';
 import { useState } from 'preact/hooks';
+import StackItem from './StackItem';
 
 const SetupPage = () => {
-  const [category, setCategory] = useState('');
-  const [_setupItems, setSetupItems] = useState(setupItems);
+  const [category, setCategory] = useState('stack');
+  const [_stack, setStack] = useState(stack);
+  const [_products, setProducts] = useState(products);
 
   const filterItems = (category: string) => {
-    const items = setupItems.filter((i) => (category ? i.category === category : true));
+    const items = products.filter((i) => (category ? i.category === category : true));
     setCategory(category);
-    setSetupItems(items);
+    setProducts(items);
   };
 
   return (
@@ -17,12 +20,12 @@ const SetupPage = () => {
       <ul id="setup-filter" className="flex flex-wrap gap-y-4 text-base text-zinc-200 font-bold text-center dark:text-gray-400 mb-14">
         <li className="mr-2">
           <a
-            onClick={() => filterItems('')}
+            onClick={() => filterItems('stack')}
             className={`cursor-pointer inline-block px-4 py-3 rounded-lg border-2 border-teal-950 hover:text-teal-200 ${
-              !category ? 'bg-teal-800 border-teal-800' : ''
+              category === 'stack' ? 'bg-teal-800 border-teal-800' : ''
             }`}
           >
-            All
+            Stack
           </a>
         </li>
         <li className="mr-2">
@@ -77,11 +80,19 @@ const SetupPage = () => {
         </li>
       </ul>
 
-      <div className="grid grid-cols-1 gap-y-8 gap-x-5 md:grid-cols-2">
-        {_setupItems.map((setupItem) => (
-          <HardwareItem key={setupItem.name} setupItem={setupItem} />
-        ))}
-      </div>
+      {category === 'stack' ? (
+        <div className="grid grid-cols-1 gap-y-8 gap-x-5 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4">
+          {_stack.map((stackItem) => (
+            <StackItem key={stackItem.name} item={stackItem} />
+          ))}
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 gap-y-8 gap-x-5 md:grid-cols-2">
+          {_products.map((product) => (
+            <Product key={product.name} product={product} />
+          ))}
+        </div>
+      )}
     </>
   );
 };

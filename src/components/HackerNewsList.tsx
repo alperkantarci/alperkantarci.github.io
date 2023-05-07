@@ -18,10 +18,6 @@ const HackerNewsList = () => {
 
   useEffect(() => {
     getNews();
-  }, []);
-
-  useEffect(() => {
-    getNews();
   }, [storyFilter]);
 
   useEffect(() => {
@@ -33,6 +29,7 @@ const HackerNewsList = () => {
 
     const response = await fetch(`https://hacker-news.firebaseio.com/v0/${storyFilter}.json?print=pretty`);
     const ids = await response.json();
+
     setNewsIds(ids);
     setFilteredNewsIds(ids.slice((page - 1) * limit, limit));
     setTotalPages(Math.abs(ids.length / limit));

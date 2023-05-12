@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'preact/hooks';
-import HackerNews from './HackerNews';
+import Story from './Story';
 
 enum StoryFilter {
   TopStories = 'topstories',
@@ -8,7 +8,7 @@ enum StoryFilter {
 
 const initialPage = 1;
 
-const HackerNewsList = () => {
+const StoryList = () => {
   const [newsIds, setNewsIds] = useState<number[]>([]);
   const [filteredNewsIds, setFilteredNewsIds] = useState<number[]>([]);
   const [storyFilter, setStoryFilter] = useState<StoryFilter>(StoryFilter.TopStories);
@@ -102,11 +102,11 @@ const HackerNewsList = () => {
 
       <div className={'flex flex-col gap-4 text-xl text-zinc-200'}>
         {filteredNewsIds.map((newsId) => {
-          return <HackerNews key={newsId} newsId={newsId}></HackerNews>;
+          return <Story key={newsId} newsId={newsId}></Story>;
         })}
       </div>
     </>
   );
 };
 
-export default HackerNewsList;
+export default StoryList;

@@ -2,7 +2,7 @@
 import Layout from '@layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import dayjs from 'dayjs';
-import sort from '../../utils/sort';
+import sort from '../../utils/sort-utils';
 import relativeTime from 'dayjs/plugin/relativeTime';
 dayjs.extend(relativeTime);
 
@@ -32,46 +32,48 @@ const date = new Date(slug || '').toLocaleDateString('en-GB', {
 ---
 
 <Layout title="Bookmarks">
-  <h2 class="text-3xl font-bold mb-14">Bookmarks</h2>
+  <div class="mx-auto px-6 md:px-12 lg:max-w-4xl">
+    <h2 class="text-3xl font-bold mb-14">Bookmarks</h2>
 
-  <h2
-    class="flex flex-wrap justify-between gap-4 items-center text-lg font-bold mb-4 text-zinc-100 bg-zinc-950 sticky top-0 bg-opacity-60 backdrop-blur-xl py-5 -mx-8 px-8"
-  >
-    <a
-      href={next}
-      class:list={next
-        ? 'text-zinc-200'
-        : 'text-base text-zinc-500 border-2 border-teal-950 px-4 py-2 rounded-md cursor-not-allowed select-none'}>Prev</a
+    <h2
+      class="flex flex-wrap justify-between gap-4 items-center text-lg font-bold mb-4 text-zinc-100 bg-zinc-950 sticky -top-8 bg-opacity-60 backdrop-blur-xl py-5 -mx-8 px-8"
     >
-    <p>{date}</p>
-    <a
-      href={prev}
-      class:list={prev
-        ? 'text-zinc-200'
-        : 'text-base text-zinc-500 border-2 border-teal-950 px-4 py-2 rounded-md text-zinc-500 cursor-not-allowed select-none'}
-    >
-      Next</a
-    >
-  </h2>
-  <ul class="text-xl flex flex-col">
-    {
-      bookmarks?.map((bookmark: any) => {
-        return (
-          <li class="first:border-t-0 border-t border-teal-950 border-opacity-50 hover:border-zinc-950 [&+li]:hover:border-zinc-950">
-            <a
-              href={bookmark.link}
-              target="_blank"
-              class="flex gap-y-4 flex-col items-start md:flex-row justify-between md:items-center py-5 md:py-6 -mx-4 px-4 md:-mx-8 md:px-8 rounded-lg hover:bg-teal-950"
-            >
-              <div class="flex-1">
-                <p class="font-extrabold mb-1">{bookmark.title}</p>
-                <p class="text-zinc-400 text-base font-bold">{bookmark.description}</p>
-              </div>
-              <p class="text-teal-400 flex-1 text-base text-right">{dayjs(bookmark.createdAt).fromNow()}</p>
-            </a>
-          </li>
-        );
-      })
-    }
-  </ul>
+      <a
+        href={next}
+        class:list={next
+          ? 'text-zinc-200'
+          : 'text-base text-zinc-500 border-2 border-teal-950 px-4 py-2 rounded-md cursor-not-allowed select-none'}>Prev</a
+      >
+      <p>{date}</p>
+      <a
+        href={prev}
+        class:list={prev
+          ? 'text-zinc-200'
+          : 'text-base text-zinc-500 border-2 border-teal-950 px-4 py-2 rounded-md text-zinc-500 cursor-not-allowed select-none'}
+      >
+        Next</a
+      >
+    </h2>
+    <ul class="text-xl flex flex-col">
+      {
+        bookmarks?.map((bookmark: any) => {
+          return (
+            <li class="first:border-t-0 border-t border-teal-950 border-opacity-50 hover:border-zinc-950 [&+li]:hover:border-zinc-950">
+              <a
+                href={bookmark.link}
+                target="_blank"
+                class="flex gap-y-4 flex-col items-start md:flex-row justify-between md:items-center py-5 md:py-6 -mx-4 px-4 md:-mx-8 md:px-8 rounded-lg hover:bg-teal-950"
+              >
+                <div class="flex-1">
+                  <p class="font-extrabold mb-1">{bookmark.title}</p>
+                  <p class="text-zinc-400 text-base font-bold">{bookmark.description}</p>
+                </div>
+                <p class="text-teal-400 flex-1 text-base text-right">{dayjs(bookmark.createdAt).fromNow()}</p>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
 </Layout>

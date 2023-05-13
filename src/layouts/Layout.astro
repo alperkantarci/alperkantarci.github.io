@@ -63,11 +63,9 @@ import '../styles.css';
 
     <title>{title} - alperk</title>
   </head>
-  <body class="bg-zinc-950 font-nunito text-zinc-300 scrollbar">
+  <body class="flex flex-row h-screen bg-zinc-950 font-nunito text-zinc-300">
     <Navbar />
-    <main
-      class="relative lg:left-72 lg:w-[calc(100%-18rem)] p-6 md:px-14 md:py-12 lg:px-16 lg:py-12 xl:px-40 xl:py-12 2xl:px-72 2xl:py-12 pb-24 md:pb-24"
-    >
+    <main class="flex-auto overflow-y-auto scrollbar pt-8 pb-24 lg:pb-10">
       <slot />
     </main>
   </body>

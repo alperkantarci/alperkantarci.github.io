@@ -1,0 +1,79 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { Image } from '@astrojs/image/components';
+import PostUtils from 'src/utils/post-utils';
+
+const { frontmatter, rawContent } = Astro.props;
+
+const createdAt = new Date(frontmatter.createdAt).toLocaleString('en-GB', {
+  month: 'short',
+  year: '2-digit',
+});
+const readingTime = PostUtils.readingTime(rawContent());
+---
+
+<style is:global>
+  .copy-code {
+    @apply text-teal-50 bg-teal-900 absolute top-1 right-1 px-2 py-1 rounded-md text-xs hover:bg-teal-800;
+  }
+</style>
+
+<script>
+  let copyButtonLabel = 'Copy';
+  let codeBlocks = Array.from(document.querySelectorAll('pre'));
+
+  for (let codeBlock of codeBlocks) {
+    let wrapper = document.createElement('div');
+    wrapper.style.position = 'relative';
+
+    let copyButton = document.createElement('button');
+    copyButton.className = 'copy-code';
+    copyButton.innerHTML = copyButtonLabel;
+
+    codeBlock.setAttribute('tabindex', '0');
+    codeBlock.appendChild(copyButton);
+    // wrap codebock with relative parent element
+    codeBlock.parentNode?.insertBefore(wrapper, codeBlock);
+    wrapper.appendChild(codeBlock);
+
+    copyButton.addEventListener('click', async () => {
+      await copyCode(codeBlock, copyButton);
+    });
+  }
+
+  async function copyCode(block: HTMLElement, button: HTMLElement) {
+    const code: HTMLElement | null = block.querySelector('code');
+    let text = code?.innerText;
+
+    await navigator.clipboard.writeText(text || '');
+
+    // visual feedback that task is completed
+    button.innerText = 'Copied';
+
+    setTimeout(() => {
+      button.innerText = copyButtonLabel;
+    }, 700);
+  }
+</script>
+
+<Layout title={frontmatter.title}>
+  <div class="flex flex-col max-w-[65ch] mx-auto px-4 sm:px-0">
+    <h1 class="text-4xl font-extrabold mb-3">{frontmatter.title}</h1>
+    <h2 class="text-2xl text-zinc-500 mb-4">{frontmatter.description}</h2>
+    <p class="text-base mb-1">{frontmatter.author}</p>
+    <p class="text-sm text-zinc-500 mb-6">{readingTime} min read • {createdAt}</p>
+    <Image
+      src={frontmatter.image.url}
+      alt={frontmatter.image.alt}
+      width={1200}
+      height={600}
+      quality={50}
+      fit={'contain'}
+      format={'avif'}
+      class={'rounded-lg mb-10'}
+    />
+  </div>
+  <div class="mx-auto prose prose-invert prose-h1:text-zinc-200 px-4 sm:px-0">
+    <slot />
+  </div>
+</Layout>

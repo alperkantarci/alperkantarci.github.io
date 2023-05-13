@@ -53,7 +53,7 @@ const StoryList = () => {
     <>
       <div
         className={
-          'flex justify-between items-center gap-4 text-sm font-bold sticky bg-zinc-950 bg-opacity-60 top-0 backdrop-blur-xl py-3 -mx-5 px-5 rounded-lg'
+          'flex mb-2 justify-between items-center gap-4 text-sm font-bold sticky bg-zinc-950 bg-opacity-60 top-0 backdrop-blur-xl py-3 -mx-5 px-5 rounded-lg'
         }
       >
         <ul className={'hidden sm:flex gap-3'}>

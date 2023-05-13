@@ -32,10 +32,10 @@ const date = new Date(slug || '').toLocaleDateString('en-GB', {
 ---
 
 <Layout title="Bookmarks">
-  <h2 class="text-3xl font-bold mb-20">Bookmarks</h2>
+  <h2 class="text-3xl font-bold mb-14">Bookmarks</h2>
 
   <h2
-    class="flex flex-wrap justify-between gap-4 items-center text-lg font-bold mb-16 text-zinc-100 bg-zinc-950 sticky top-0 bg-opacity-60 backdrop-blur-xl py-5 -mx-8 px-8"
+    class="flex flex-wrap justify-between gap-4 items-center text-lg font-bold mb-4 text-zinc-100 bg-zinc-950 sticky top-0 bg-opacity-60 backdrop-blur-xl py-5 -mx-8 px-8"
   >
     <a
       href={next}
@@ -57,11 +57,11 @@ const date = new Date(slug || '').toLocaleDateString('en-GB', {
     {
       bookmarks?.map((bookmark: any) => {
         return (
-          <li class="first:border-t-0 border-t border-teal-950 hover:border-zinc-950 [&+li]:hover:border-zinc-950">
+          <li class="first:border-t-0 border-t border-teal-950 border-opacity-50 hover:border-zinc-950 [&+li]:hover:border-zinc-950">
             <a
               href={bookmark.link}
               target="_blank"
-              class="flex gap-y-4 flex-col items-start md:flex-row justify-between md:items-center py-6 -mx-8 px-8 rounded-lg hover:bg-teal-950"
+              class="flex gap-y-4 flex-col items-start md:flex-row justify-between md:items-center py-5 md:py-6 -mx-4 px-4 md:-mx-8 md:px-8 rounded-lg hover:bg-teal-950"
             >
               <div class="flex-1">
                 <p class="font-extrabold mb-1">{bookmark.title}</p>

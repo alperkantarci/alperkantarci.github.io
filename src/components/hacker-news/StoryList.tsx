@@ -21,7 +21,8 @@ const StoryList = () => {
   }, [storyFilter]);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const mainEL = document.querySelector('main');
+    mainEL?.scrollTo({ top: 0 });
   }, [filteredNewsIds]);
 
   const getNews = async () => {

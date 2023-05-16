@@ -24,7 +24,6 @@ const HackerNews = ({ newsId }: Props) => {
   const getDetails = async (newsId: number) => {
     const response = await fetch(`https://hacker-news.firebaseio.com/v0/item/${newsId}.json?print=pretty`);
     const details = await response.json();
-    console.log({details});
     details.time = new Date(Number(`${details.time}000`));
     setDetails(details);
   };

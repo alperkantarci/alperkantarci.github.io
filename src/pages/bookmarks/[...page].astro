@@ -41,14 +41,14 @@ const date = new Date(slug || '').toLocaleDateString('en-GB', {
       <a
         href={next}
         class:list={next
-          ? 'text-zinc-200'
+          ? 'text-base text-zinc-200 border-2 border-teal-700 px-4 py-2 rounded-md'
           : 'text-base text-zinc-500 border-2 border-teal-950 px-4 py-2 rounded-md cursor-not-allowed select-none'}>Prev</a
       >
       <p>{date}</p>
       <a
         href={prev}
         class:list={prev
-          ? 'text-zinc-200'
+          ? 'text-base text-zinc-200 border-2 border-teal-700 px-4 py-2 rounded-md'
           : 'text-base text-zinc-500 border-2 border-teal-950 px-4 py-2 rounded-md text-zinc-500 cursor-not-allowed select-none'}
       >
         Next</a

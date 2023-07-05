@@ -17,11 +17,11 @@ const SetupPage = () => {
 
   return (
     <>
-      <ul id="setup-filter" className="flex flex-wrap gap-y-4 text-base text-zinc-200 font-bold text-center dark:text-gray-400 mb-14">
+      <ul id="setup-filter" className="flex flex-wrap gap-y-4 text-base text-zinc-200 font-bold text-center mb-14">
         <li className="mr-2">
           <a
             onClick={() => filterItems('stack')}
-            className={`cursor-pointer inline-block px-4 py-3 rounded-lg border-2 border-teal-950 hover:text-teal-200 select-none ${
+            className={`cursor-pointer inline-block px-4 py-3 rounded-lg border-2 border-teal-800 hover:text-teal-200 select-none ${
               category === 'stack' ? 'bg-teal-800 border-teal-800' : ''
             }`}
           >
@@ -31,7 +31,7 @@ const SetupPage = () => {
         <li className="mr-2">
           <a
             onClick={() => filterItems('laptop')}
-            className={`cursor-pointer inline-block px-4 py-3 rounded-lg border-2 border-teal-950 hover:text-teal-200 select-none ${
+            className={`cursor-pointer inline-block px-4 py-3 rounded-lg border-2 border-teal-800 hover:text-teal-200 select-none ${
               category === 'laptop' ? 'bg-teal-800 border-teal-800' : ''
             }`}
           >
@@ -41,7 +41,7 @@ const SetupPage = () => {
         <li className="mr-2">
           <a
             onClick={() => filterItems('display')}
-            className={`cursor-pointer inline-block px-4 py-3 rounded-lg border-2 border-teal-950 hover:text-teal-200 select-none ${
+            className={`cursor-pointer inline-block px-4 py-3 rounded-lg border-2 border-teal-800 hover:text-teal-200 select-none ${
               category === 'display' ? 'bg-teal-800 border-teal-800' : ''
             }`}
           >
@@ -51,7 +51,7 @@ const SetupPage = () => {
         <li className="mr-2">
           <a
             onClick={() => filterItems('mouse-keyboard')}
-            className={`cursor-pointer inline-block px-4 py-3 rounded-lg border-2 border-teal-950 hover:text-teal-200 select-none ${
+            className={`cursor-pointer inline-block px-4 py-3 rounded-lg border-2 border-teal-800 hover:text-teal-200 select-none ${
               category === 'mouse-keyboard' ? 'bg-teal-800 border-teal-800' : ''
             }`}
           >
@@ -61,7 +61,7 @@ const SetupPage = () => {
         <li className="mr-2">
           <a
             onClick={() => filterItems('music')}
-            className={`cursor-pointer inline-block px-4 py-3 rounded-lg border-2 border-teal-950 hover:text-teal-200 select-none ${
+            className={`cursor-pointer inline-block px-4 py-3 rounded-lg border-2 border-teal-800 hover:text-teal-200 select-none ${
               category === 'music' ? 'bg-teal-800 border-teal-800' : ''
             }`}
           >
@@ -71,7 +71,7 @@ const SetupPage = () => {
         <li className="mr-2">
           <a
             onClick={() => filterItems('e-reader')}
-            className={`cursor-pointer inline-block px-4 py-3 rounded-lg border-2 border-teal-950 hover:text-teal-200 select-none ${
+            className={`cursor-pointer inline-block px-4 py-3 rounded-lg border-2 border-teal-800 hover:text-teal-200 select-none ${
               category === 'e-reader' ? 'bg-teal-800 border-teal-800' : ''
             }`}
           >

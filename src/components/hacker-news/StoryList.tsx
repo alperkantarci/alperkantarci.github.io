@@ -33,7 +33,7 @@ const StoryList = () => {
 
     setNewsIds(ids);
     setFilteredNewsIds(ids.slice((page - 1) * limit, limit));
-    setTotalPages(Math.abs(ids.length / limit));
+    setTotalPages(Math.ceil(Math.abs(ids.length / limit)));
   };
 
   const nextPage = () => {

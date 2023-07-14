@@ -11,10 +11,27 @@ interface Company {
   techStackIcons: Array<TechStackIcon>;
 }
 
+const fullstackDeveloper = 'Full Stack Developer';
+
+const proxify: Company = {
+  link: 'https://proxify.io/',
+  name: 'Proxify',
+  position: fullstackDeveloper,
+  date: 'Feb/2023 - Present',
+  techStackIcons: [
+    { name: 'mdi:angular', title: 'Angular' },
+    { name: 'mdi:nodejs', title: 'Nodejs' },
+    { name: 'mdi:language-typescript', title: 'Typescript' },
+    { name: 'mdi:language-python', title: 'Python' },
+    { name: 'mdi:language-java', title: 'Java' },
+    { name: 'mdi:docker', title: 'Docker' },
+  ],
+};
+
 const sechard: Company = {
   link: 'https://sechard.com',
   name: 'SecHard',
-  position: 'Full-stack developer',
+  position: fullstackDeveloper,
   date: 'Sept/2019 - Jan/2023',
   techStackIcons: [
     { name: 'mdi:angular', title: 'Angular' },
@@ -29,7 +46,7 @@ const sechard: Company = {
 const genetek: Company = {
   link: 'https://genetek.com.tr',
   name: 'Genetek',
-  position: 'Full-stack developer',
+  position: fullstackDeveloper,
   date: 'Nov/2017 - Nov/2018',
   techStackIcons: [
     { name: 'mdi:language-javascript', title: 'Javascript' },
@@ -44,7 +61,7 @@ const genetek: Company = {
 const feronto: Company = {
   link: '#',
   name: 'Feronto',
-  position: 'Full-stack developer',
+  position: fullstackDeveloper,
   date: 'Nov/2017 - Nov/2018',
   techStackIcons: [
     { name: 'mdi:language-javascript', title: 'Javascript' },
@@ -56,5 +73,5 @@ const feronto: Company = {
   ],
 };
 
-export default [sechard, genetek, feronto];
+export default [proxify, sechard, genetek, feronto];
 export type { Company };

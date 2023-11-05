@@ -1,15 +1,17 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import { Image } from '@astrojs/image/components';
-import PostUtils from 'src/utils/post-utils';
-import SortUtils from 'src/utils/sort-utils';
+import Layout from "@layouts/Layout.astro";
+import { Image } from "astro:assets";
+import PostUtils from "src/utils/post-utils";
+import SortUtils from "src/utils/sort-utils";
+import { type GetStaticPaths, type MarkdownInstance } from "astro";
 
-export async function getStaticPaths({ paginate }: any) {
-  const allWriting = await Astro.glob('./*.md');
+export const getStaticPaths = (async ({ paginate }) => {
+  const allWriting: MarkdownInstance<Record<string, any>>[] =
+    await Astro.glob("./*.md");
   return paginate(allWriting, {
     pageSize: 5,
   });
-}
+}) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
 
@@ -32,18 +34,18 @@ writing.sort(SortUtils.byDate);
       <a
         href={prev}
         class:list={[
-          'text-base border-2 border-teal-950 px-4 py-2 rounded-md select-none',
-          { 'text-zinc-200 cursor-pointer': prev },
-          { 'text-zinc-500 cursor-not-allowed': !prev },
+          "text-base border-2 border-teal-950 px-4 py-2 rounded-md select-none",
+          { "text-zinc-200 cursor-pointer": prev },
+          { "text-zinc-500 cursor-not-allowed": !prev },
         ]}>Prev</a
       >
       <p>{page.currentPage} / {page.lastPage}</p>
       <a
         href={next}
         class:list={[
-          'text-base border-2 border-teal-950 px-4 py-2 rounded-md select-none',
-          { 'text-zinc-200 cursor-pointer': next },
-          { 'text-zinc-500 cursor-not-allowed': !next },
+          "text-base border-2 border-teal-950 px-4 py-2 rounded-md select-none",
+          { "text-zinc-200 cursor-pointer": next },
+          { "text-zinc-500 cursor-not-allowed": !next },
         ]}
       >
         Next</a
@@ -60,27 +62,37 @@ writing.sort(SortUtils.byDate);
             first:border-t-0 border-t border-teal-950 border-opacity-50 [&+li]:hover:border-zinc-950"
             >
               <div>
-                <h2 class="text-zinc-50 text-xl font-extrabold">{post.frontmatter.title}</h2>
+                <h2 class="text-zinc-50 text-xl font-extrabold">
+                  {post.frontmatter.title}
+                </h2>
                 <p class="text-sm font-bold text-zinc-500 mb-4">
-                  by {post.frontmatter.author} •{' '}
-                  {new Date(post.frontmatter.createdAt).toLocaleString('en-GB', {
-                    day: '2-digit',
-                    month: '2-digit',
-                    year: '2-digit',
-                  })}
+                  by {post.frontmatter.author} •{" "}
+                  {new Date(post.frontmatter.createdAt).toLocaleString(
+                    "en-GB",
+                    {
+                      day: "2-digit",
+                      month: "2-digit",
+                      year: "2-digit",
+                    }
+                  )}
                 </p>
                 <p class="mb-3">{post.frontmatter.description}</p>
-                <p class="text-zinc-500 text-sm">{PostUtils.readingTime(post.rawContent())} min read</p>
+                <p class="text-zinc-500 text-sm">
+                  {PostUtils.readingTime(post.rawContent())} min read
+                </p>
               </div>
               <Image
-                class={'rounded-lg -order-1 sm:order-1 w-full sm:w-1/3'}
+                class={
+                  "rounded-lg -order-1 sm:order-1 w-full sm:w-1/3 object-cover"
+                }
                 src={post.frontmatter.image.url}
-                format={'avif'}
+                format={"avif"}
                 alt={post.frontmatter.image.alt}
                 width={525}
                 height={350}
                 quality={50}
-                fit={'cover'}
+                loading={"lazy"}
+                decoding={"async"}
               />
             </a>
           );

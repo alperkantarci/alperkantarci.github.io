@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon';
+import { Icon } from "astro-icon";
 
 interface Props {
   icon: string;
@@ -11,7 +11,7 @@ interface Props {
 const { icon, iconColor, label, link } = Astro.props;
 
 const { pathname } = Astro.url;
-const isActive = link !== '/' ? pathname.includes(link) : pathname === link;
+const isActive = link !== "/" ? pathname.includes(link) : pathname === link;
 ---
 
 <li>
@@ -19,11 +19,11 @@ const isActive = link !== '/' ? pathname.includes(link) : pathname === link;
     href={link}
     aria-label={label}
     class:list={[
-      'flex gap-x-4 px-4 py-2 font-extrabold rounded-lg items-center cursor-pointer hover:border-teal-950 hover:text-teal-400 hover:font-extrabold hover:bg-teal-950',
-      { 'text-teal-400 bg-teal-950': isActive },
+      "flex gap-x-4 px-4 py-2 font-extrabold rounded-lg items-center cursor-pointer hover:border-teal-950 hover:text-teal-400 hover:font-extrabold hover:bg-teal-950",
+      { "text-teal-400 bg-teal-950": isActive },
     ]}
   >
-    <Icon name={icon} class:list={['w-5', iconColor]} />
+    <Icon name={icon} class:list={["w-5", iconColor]} />
     <div class="text-lg">{label}</div>
   </a>
 </li>

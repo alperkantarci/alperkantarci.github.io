@@ -1,6 +1,6 @@
 ---
-import Navbar from '@components/navbar/Navbar.astro';
-import { SEO } from 'astro-seo';
+import Navbar from "@components/navbar/Navbar.astro";
+import { SEO } from "astro-seo";
 
 interface Props {
   title: string;
@@ -8,44 +8,44 @@ interface Props {
 
 const { title } = Astro.props;
 
-import '../styles.css';
+import "../styles.css";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" style="font-size: 16px">
   <head>
     <SEO
       description="Alper Kantarci, alperk, full-stack developer, web development, software developer, dev"
       openGraph={{
         basic: {
-          title: 'Alper Kantarci',
-          type: 'Full-Stack Developer',
-          image: 'https://avatars.githubusercontent.com/u/16183134?v=4',
+          title: "Alper Kantarci",
+          type: "Full-Stack Developer",
+          image: "https://avatars.githubusercontent.com/u/16183134?v=4",
         },
       }}
       twitter={{
-        creator: '@alper_kantarci',
+        creator: "@alper_kantarci",
       }}
       extend={{
         // extending the default link tags
         link: [
           {
-            rel: 'icon',
-            href: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>',
+            rel: "icon",
+            href: "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>",
           },
         ],
         // extending the default meta tags
         meta: [
           {
-            name: 'twitter:image',
-            content: 'https://avatars.githubusercontent.com/u/16183134?v=4',
+            name: "twitter:image",
+            content: "https://avatars.githubusercontent.com/u/16183134?v=4",
           },
-          { name: 'twitter:title', content: 'Alper Kantarci' },
-          { name: 'twitter:description', content: 'Full-Stack Developer' },
+          { name: "twitter:title", content: "Alper Kantarci" },
+          { name: "twitter:description", content: "Full-Stack Developer" },
         ],
       }}
       noindex={false}
-      charset={'utf-8'}
+      charset={"utf-8"}
     />
 
     <meta charset="UTF-8" />

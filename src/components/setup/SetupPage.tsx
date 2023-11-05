@@ -1,28 +1,33 @@
-import Product from '@components/setup/Product';
-import products from 'src/constants/products';
-import stack from 'src/constants/stack';
-import { useState } from 'preact/hooks';
-import StackItem from './StackItem';
+import Product from "@components/setup/Product";
+import products from "src/constants/products";
+import stack from "src/constants/stack";
+import { useState } from "preact/hooks";
+import StackItem from "./StackItem";
 
 const SetupPage = () => {
-  const [category, setCategory] = useState('stack');
+  const [category, setCategory] = useState("stack");
   const [_stack, setStack] = useState(stack);
   const [_products, setProducts] = useState(products);
 
   const filterItems = (category: string) => {
-    const items = products.filter((i) => (category ? i.category === category : true));
+    const items = products.filter((i) =>
+      category ? i.category === category : true
+    );
     setCategory(category);
     setProducts(items);
   };
 
   return (
     <>
-      <ul id="setup-filter" className="flex flex-wrap gap-y-4 text-base text-zinc-200 font-bold text-center mb-14">
+      <ul
+        id="setup-filter"
+        className="flex flex-wrap gap-y-4 text-base text-zinc-200 font-bold text-center mb-14"
+      >
         <li className="mr-2">
           <a
-            onClick={() => filterItems('stack')}
+            onClick={() => filterItems("stack")}
             className={`cursor-pointer inline-block px-4 py-3 rounded-lg border-2 border-teal-800 hover:text-teal-200 select-none ${
-              category === 'stack' ? 'bg-teal-800 border-teal-800' : ''
+              category === "stack" ? "bg-teal-800 border-teal-800" : ""
             }`}
           >
             Stack
@@ -30,9 +35,9 @@ const SetupPage = () => {
         </li>
         <li className="mr-2">
           <a
-            onClick={() => filterItems('laptop')}
+            onClick={() => filterItems("laptop")}
             className={`cursor-pointer inline-block px-4 py-3 rounded-lg border-2 border-teal-800 hover:text-teal-200 select-none ${
-              category === 'laptop' ? 'bg-teal-800 border-teal-800' : ''
+              category === "laptop" ? "bg-teal-800 border-teal-800" : ""
             }`}
           >
             Laptop
@@ -40,9 +45,9 @@ const SetupPage = () => {
         </li>
         <li className="mr-2">
           <a
-            onClick={() => filterItems('display')}
+            onClick={() => filterItems("display")}
             className={`cursor-pointer inline-block px-4 py-3 rounded-lg border-2 border-teal-800 hover:text-teal-200 select-none ${
-              category === 'display' ? 'bg-teal-800 border-teal-800' : ''
+              category === "display" ? "bg-teal-800 border-teal-800" : ""
             }`}
           >
             Display
@@ -50,9 +55,9 @@ const SetupPage = () => {
         </li>
         <li className="mr-2">
           <a
-            onClick={() => filterItems('mouse-keyboard')}
+            onClick={() => filterItems("mouse-keyboard")}
             className={`cursor-pointer inline-block px-4 py-3 rounded-lg border-2 border-teal-800 hover:text-teal-200 select-none ${
-              category === 'mouse-keyboard' ? 'bg-teal-800 border-teal-800' : ''
+              category === "mouse-keyboard" ? "bg-teal-800 border-teal-800" : ""
             }`}
           >
             Mouse / Keyboard
@@ -60,9 +65,9 @@ const SetupPage = () => {
         </li>
         <li className="mr-2">
           <a
-            onClick={() => filterItems('music')}
+            onClick={() => filterItems("music")}
             className={`cursor-pointer inline-block px-4 py-3 rounded-lg border-2 border-teal-800 hover:text-teal-200 select-none ${
-              category === 'music' ? 'bg-teal-800 border-teal-800' : ''
+              category === "music" ? "bg-teal-800 border-teal-800" : ""
             }`}
           >
             Music
@@ -70,9 +75,9 @@ const SetupPage = () => {
         </li>
         <li className="mr-2">
           <a
-            onClick={() => filterItems('e-reader')}
+            onClick={() => filterItems("e-reader")}
             className={`cursor-pointer inline-block px-4 py-3 rounded-lg border-2 border-teal-800 hover:text-teal-200 select-none ${
-              category === 'e-reader' ? 'bg-teal-800 border-teal-800' : ''
+              category === "e-reader" ? "bg-teal-800 border-teal-800" : ""
             }`}
           >
             E-reader
@@ -80,7 +85,7 @@ const SetupPage = () => {
         </li>
       </ul>
 
-      {category === 'stack' ? (
+      {category === "stack" ? (
         <div className="grid grid-cols-1 gap-y-8 gap-x-5 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4">
           {_stack.map((stackItem) => (
             <StackItem key={stackItem.name} item={stackItem} />

@@ -1,18 +1,17 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import { getCollection } from 'astro:content';
-import dayjs from 'dayjs';
-import sort from '../../utils/sort-utils';
-import relativeTime from 'dayjs/plugin/relativeTime';
+import Layout from "@layouts/Layout.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import dayjs from "dayjs";
+import sort from "../../utils/sort-utils";
+import relativeTime from "dayjs/plugin/relativeTime";
 dayjs.extend(relativeTime);
 
 export async function getStaticPaths({ paginate }: any) {
-  const allBookmarks = await getCollection('bookmarks');
-
+  const allBookmarks: CollectionEntry<any>[] = await getCollection("bookmarks");
   return paginate(allBookmarks.sort(sort.byDate), { pageSize: 1 });
 }
 
-const { page } = Astro.props;
+const { page }: { page: { data: any; url: any } } = Astro.props;
 
 const {
   url: { next, prev },
@@ -22,12 +21,12 @@ const {
   data: [{ data, slug }],
 } = page;
 
-let { bookmarks } = data;
+let { bookmarks }: { bookmarks: [] } = data;
 bookmarks.sort(sort.byDate);
 
-const date = new Date(slug || '').toLocaleDateString('en-GB', {
-  year: 'numeric',
-  month: 'long',
+const date = new Date(slug || "").toLocaleDateString("en-GB", {
+  year: "numeric",
+  month: "long",
 });
 ---
 
@@ -41,15 +40,16 @@ const date = new Date(slug || '').toLocaleDateString('en-GB', {
       <a
         href={next}
         class:list={next
-          ? 'text-base text-zinc-200 border-2 border-teal-700 px-4 py-2 rounded-md'
-          : 'text-base text-zinc-500 border-2 border-teal-950 px-4 py-2 rounded-md cursor-not-allowed select-none'}>Prev</a
+          ? "text-base text-zinc-200 border-2 border-teal-700 px-4 py-2 rounded-md"
+          : "text-base text-zinc-500 border-2 border-teal-950 px-4 py-2 rounded-md cursor-not-allowed select-none"}
+        >Prev</a
       >
       <p>{date}</p>
       <a
         href={prev}
         class:list={prev
-          ? 'text-base text-zinc-200 border-2 border-teal-700 px-4 py-2 rounded-md'
-          : 'text-base text-zinc-500 border-2 border-teal-950 px-4 py-2 rounded-md text-zinc-500 cursor-not-allowed select-none'}
+          ? "text-base text-zinc-200 border-2 border-teal-700 px-4 py-2 rounded-md"
+          : "text-base text-zinc-500 border-2 border-teal-950 px-4 py-2 rounded-md text-zinc-500 cursor-not-allowed select-none"}
       >
         Next</a
       >
@@ -66,9 +66,13 @@ const date = new Date(slug || '').toLocaleDateString('en-GB', {
               >
                 <div class="flex-1">
                   <p class="font-extrabold mb-1">{bookmark.title}</p>
-                  <p class="text-zinc-400 text-base font-bold">{bookmark.description}</p>
+                  <p class="text-zinc-400 text-base font-bold">
+                    {bookmark.description}
+                  </p>
                 </div>
-                <p class="text-teal-400 flex-1 text-base text-right">{dayjs(bookmark.createdAt).fromNow()}</p>
+                <p class="text-teal-400 flex-1 text-base text-right">
+                  {dayjs(bookmark.createdAt).fromNow()}
+                </p>
               </a>
             </li>
           );

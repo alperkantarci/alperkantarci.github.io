@@ -16,6 +16,7 @@ export default defineConfig({
     preact(),
   ],
   site: "https://alperk.dev",
-  // github pages adds trailingSlash automatically
-  trailingSlash: "always",
+  build: {
+    format: "file",
+  },
 });

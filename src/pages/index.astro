@@ -7,40 +7,29 @@ import { github, linkedin, youtube, mailto } from "src/constants/social-links";
 import companies from "src/constants/work-info";
 ---
 
-<meta
-  name="description"
-  content="alperk.dev, Alper Kantarci, full-stack developer with 6 years of experience based in Prizren, Kosovo."
-/>
-
 <Layout title="Home">
   <div class="mx-auto px-6 md:px-12 lg:max-w-4xl">
-    <h2 class="text-3xl font-bold">Hey, I'm Alper 👋,</h2>
-    <h2 class="text-3xl font-bold mb-14">
-      a full-stack developer with 6 years of experience.
-    </h2>
+    <h2 class="text-4xl font-bold underline mt-6 mb-8">Hey, I'm Alper 👋,</h2>
 
-    <div class="text-xl mb-12">
-      <p>
-        I’m a full-stack <a
-          href={github}
-          target="_blank"
-          class="text-teal-300"
-          aria-label="github">developer</a
-        > based in Prizren, Kosovo.
-      </p>
-      <p>I love design and code.</p>
-      <br />
-      <p>
-        I love making <a
-          href={youtube}
-          target="_blank"
-          class="text-teal-300"
-          aria-label="youtube">music</a
-        >. I'm a person who is very interested and enthusiastic about music
-        production. I appreciate the subtleties and nuances of music. I value
-        and use technology that allows me to delve deeper into sound and audio.
-      </p>
-    </div>
+    <p class="text-xl text-zinc-300">
+      Full-stack developer based in Prizren, Kosovo. 🇽🇰
+    </p>
+
+    <p class="text-xl text-zinc-300 mb-6">
+      I specialize in <span class="text-teal-400">web development</span>, but I
+      enjoy coding anything that brings ideas to life.
+    </p>
+
+    <p class="text-xl text-zinc-300 mb-16">
+      I love making <a
+        href={youtube}
+        target="_blank"
+        class="text-teal-300 underline"
+        aria-label="youtube">music</a
+      >, deeply interested and enthusiastic about music production. Subtleties
+      and nuances of music captivate me, and I use technology to further explore
+      sound and audio.
+    </p>
 
     <div class="flex flex-wrap gap-3 text-xl mb-16 items-center text-teal-100">
       <a

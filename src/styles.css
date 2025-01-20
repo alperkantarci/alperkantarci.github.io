@@ -22,29 +22,6 @@
   }
 }
 
-@font-face {
-  font-family: "Nunito";
-  src: url("./assets/fonts/Nunito-ExtraBold.woff2") format("woff2"),
-    url("./assets/fonts/Nunito-ExtraBold.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("./assets/fonts/Nunito-Regular.woff2") format("woff2"),
-    url("./assets/fonts/Nunito-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("./assets/fonts/Nunito-Bold.woff2") format("woff2"),
-    url("./assets/fonts/Nunito-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
+.copy-code {
+  @apply text-teal-50 bg-teal-900 absolute top-2 right-2 px-2 py-1 rounded-md text-xs hover:bg-teal-800;
 }

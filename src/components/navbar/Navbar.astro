@@ -19,13 +19,13 @@ import { Image } from "astro:assets";
   <div class="flex flex-col items-center mb-24">
     <a href="/" aria-label="Home">
       <Image
-        class="rounded-full mb-4"
+        class="rounded-full mb-4 w-28 h-28 object-cover"
         src="/images/profile/profile-photo.webp"
         width={112}
         height={112}
         alt="Profile Photo"
         format="webp"
-        loading="lazy"
+        loading="eager"
       />
     </a>
     <div class="flex gap-3 items-center">
